@@ -9,7 +9,7 @@ error_reporting(E_ALL);
  *
  * This file is part of untitledModel.
  *
- * Automatically generated on 26.01.2016, 11:25:44 with ArgoUML PHP module 
+ * Automatically generated on 27.01.2017, 15:38:03 with ArgoUML PHP module 
  * (last revised $Date: 2010-01-12 20:14:42 +0100 (Tue, 12 Jan 2010) $)
  *
  * @author firstname and lastname of author, <author@example.org>
@@ -63,8 +63,9 @@ class video
      *
      * @access public
      * @author firstname and lastname of author, <author@example.org>
+     * @param  file_source
      */
-    public function upload_video( $file_source )
+    public function upload_video($file_source)
     {
      $video_id = (int)0;
      $success  = TRUE;
@@ -87,8 +88,9 @@ class video
      *
      * @access public
      * @author firstname and lastname of author, <author@example.org>
+     * @param  file_name
      */
-    public function is_video( $file_name )
+    public function is_video($file_name)
     {
      $is_type_allowed = FALSE;
              

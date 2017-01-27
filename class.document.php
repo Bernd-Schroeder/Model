@@ -9,7 +9,7 @@ error_reporting(E_ALL);
  *
  * This file is part of untitledModel.
  *
- * Automatically generated on 26.01.2016, 11:28:27 with ArgoUML PHP module 
+ * Automatically generated on 27.01.2017, 15:33:17 with ArgoUML PHP module 
  * (last revised $Date: 2010-01-12 20:14:42 +0100 (Tue, 12 Jan 2010) $)
  *
  * @author firstname and lastname of author, <author@example.org>
@@ -63,30 +63,34 @@ class document
      *
      * @access public
      * @author firstname and lastname of author, <author@example.org>
+     * @param  file
      */
-
-    public function save_document( $file )
+    public function save_document($file)
     {
      $document_id = (int)0;
      $success     = TRUE;
-
+     
      $this->set_name( $this->get_owner_group() . "_tmp"  );
      $document_id = $this->insert();
-
+     
      $this->set_name( $this->get_owner_group() . $document_id  );
      $this->set_id( $document_id );
-     
+          
      $file_name = $this->get_name() . '.pdf';
      $target = $this->generate_target_path();
-     
+          
      $file->Output( "F", $target . $file_name );
      $this->update();
-     
+          
      return $target . $file_name;
     }
-
-
-    public function upload_document( $file_source )
+    /**
+     *
+     * @access public
+     * @author firstname and lastname of author, <author@example.org>
+     * @param  file_source
+     */
+    public function upload_document($file_source)
     {
      $document_id = (int)0;
      $success     = TRUE;
@@ -109,8 +113,9 @@ class document
      *
      * @access public
      * @author firstname and lastname of author, <author@example.org>
+     * @param  file_name
      */
-    public function is_document( $file_name )
+    public function is_document($file_name)
     {
      $is_type_allowed = FALSE;
              

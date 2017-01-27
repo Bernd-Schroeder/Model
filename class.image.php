@@ -9,7 +9,7 @@ error_reporting(E_ALL);
  *
  * This file is part of untitledModel.
  *
- * Automatically generated on 26.01.2016, 11:29:09 with ArgoUML PHP module 
+ * Automatically generated on 27.01.2017, 15:42:33 with ArgoUML PHP module 
  * (last revised $Date: 2010-01-12 20:14:42 +0100 (Tue, 12 Jan 2010) $)
  *
  * @author Bernd Schröder
@@ -66,8 +66,9 @@ class image
      *
      * @access public
      * @author firstname and lastname of author, <author@example.org>
+     * @param  file_source
      */
-    public function upload_image( $file_source )
+    public function upload_image($file_source)
     {
      $image_id = (int)0;
      $success  = TRUE;
@@ -95,8 +96,9 @@ class image
      *
      * @access public
      * @author firstname and lastname of author, <author@example.org>
+     * @param  file_name
      */
-    public function is_image( $file_name )
+    public function is_image($file_name)
     {
      $is_type_allowed = FALSE;
              
@@ -411,7 +413,7 @@ class image
      * @access public
      * @author Bernd Schröder
      * @version 1.0
-     */   
+     */
     public function get_small_thumb()
     {
      return $this->get_target_path() . "small_thumbs/" .
@@ -425,7 +427,7 @@ class image
      */
     public function get_avatar_icon()
     {
-     if ( $this->get_id() > (int)0 )
+     if( $this->get_id() > (int)0 )
      { return $this->get_small_thumb(); }
      else
      { return $this->get_dummy_icon(); }
