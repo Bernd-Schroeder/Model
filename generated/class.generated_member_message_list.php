@@ -87,6 +87,7 @@ class generated_member_message_list
 
       $object_number = 0;
       $max_row = $this->get_row_per_page();
+      
       $page = $this->get_page();
       $start_row = $page*$max_row;
       if( $this->stmt = $mysqli->prepare( $prepare_statement ))
