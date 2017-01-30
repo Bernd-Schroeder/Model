@@ -30,8 +30,11 @@ $files =
 "team_team.php",
 "time_table_item.php",
 "video.php",
-"message_media.php",
-"room.php"
+//"message_media.php",
+"room.php",
+"media_connection.php",
+"media.php",
+"media_file.php"
 ];
 
 foreach ($files as  $name )

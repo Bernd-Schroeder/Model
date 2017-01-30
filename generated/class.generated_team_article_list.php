@@ -45,8 +45,7 @@ class generated_team_article_list
       modified_stamp,
       header,
       text,
-      image_id,
-      ref_link
+      media_connection_id
       FROM team_article " .
       $where_statement;
       return $this->basic_load( $prepare_statement );
@@ -107,8 +106,7 @@ class generated_team_article_list
       $modified_stamp,
       $header,
       $text,
-      $image_id,
-      $ref_link
+      $media_connection_id
       );
       $this->stmt->store_result();
       $this->stmt->data_seek( (int)( $start_row ) );
@@ -124,8 +122,7 @@ class generated_team_article_list
       $new_object->set_modified_stamp( $modified_stamp );
       $new_object->set_header( $header );
       $new_object->set_text( $text );
-      $new_object->set_image_id( $image_id );
-      $new_object->set_ref_link( $ref_link );
+      $new_object->set_media_connection_id( $media_connection_id );
       $this->add_item( $new_object );
       $object_number++;
       }
@@ -153,8 +150,7 @@ class generated_team_article_list
       team_article.modified_stamp,
       team_article.header,
       team_article.text,
-      team_article.image_id,
-      team_article.ref_link
+      team_article.media_connection_id
       ";
     }
 
