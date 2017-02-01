@@ -65,6 +65,14 @@ class generated_event_article_comment
      */
     private $text = null;
 
+    /**
+     * Short description of attribute media_id
+     *
+     * @access public
+     * @var Integer
+     */
+    public $media_id = null;
+
      // --- OPERATIONS ---
 
     /**
@@ -200,6 +208,28 @@ class generated_event_article_comment
     }
 
     /**
+     * Short description of attribute media_id
+     *
+     * @access public
+     * @var Integer
+     */
+    public function set_media_id($media_id)
+    {
+      $this->media_id = $media_id;
+    }
+
+    /**
+     * Short description of attribute media_id
+     *
+     * @access public
+     * @var Integer
+     */
+    public function get_media_id()
+    {
+      return $this->media_id;
+    }
+
+    /**
      *
      * This is the insert function of the class event_article_comment
      * @author Bernd Schröder
@@ -214,6 +244,7 @@ class generated_event_article_comment
       $author_id = $this->get_author_id();
       $article_id = $this->get_article_id();
       $text = $this->get_text();
+      $media_id = $this->get_media_id();
       if( $stmt = $mysqli->prepare(
       "INSERT INTO event_article_comment
       (
@@ -221,18 +252,20 @@ class generated_event_article_comment
       deleted,
       author_id,
       article_id,
-      text
+      text,
+      media_id
       )
-      VALUES (?,?,?,?,?)"))
+      VALUES (?,?,?,?,?,?)"))
       {
       $stmt->bind_param
       (
-      "iiiis",
+      "iiiisi",
       $id,
       $deleted,
       $author_id,
       $article_id,
-      $text
+      $text,
+      $media_id
       );
       $stmt->execute();
       $stmt->close();
@@ -264,7 +297,8 @@ class generated_event_article_comment
       author_id,
       written_stamp,
       article_id,
-      text
+      text,
+      media_id
       FROM event_article_comment WHERE id=?"))
       {
       $stmt->bind_param('i', $id );
@@ -276,7 +310,8 @@ class generated_event_article_comment
       $author_id,
       $written_stamp,
       $article_id,
-      $text
+      $text,
+      $media_id
       );
       if( $stmt->fetch() == TRUE )
       {
@@ -286,6 +321,7 @@ class generated_event_article_comment
       $this->set_written_stamp( $written_stamp );
       $this->set_article_id( $article_id );
       $this->set_text( $text );
+      $this->set_media_id( $media_id );
       $stmt->close();
       }
       else
@@ -316,6 +352,7 @@ class generated_event_article_comment
       $author_id = $this->get_author_id();
       $article_id = $this->get_article_id();
       $text = $this->get_text();
+      $media_id = $this->get_media_id();
       $id = $this->get_id();
       if( $stmt = $mysqli->prepare(
       "UPDATE event_article_comment SET
@@ -323,17 +360,19 @@ class generated_event_article_comment
       deleted=?,
       author_id=?,
       article_id=?,
-      text=?
+      text=?,
+      media_id=?
       WHERE id=?"))
       {
       $stmt->bind_param
       (
-      "iiiisi",
+      "iiiisii",
       $id,
       $deleted,
       $author_id,
       $article_id,
       $text,
+      $media_id,
       $id
       );
       $stmt->execute();

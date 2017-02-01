@@ -42,7 +42,8 @@ class generated_team_article_comment_list
       author_id,
       written_stamp,
       article_id,
-      text
+      text,
+      media_id
       FROM team_article_comment " .
       $where_statement;
       return $this->basic_load( $prepare_statement );
@@ -100,7 +101,8 @@ class generated_team_article_comment_list
       $author_id,
       $written_stamp,
       $article_id,
-      $text
+      $text,
+      $media_id
       );
       $this->stmt->store_result();
       $this->stmt->data_seek( (int)( $start_row ) );
@@ -114,6 +116,7 @@ class generated_team_article_comment_list
       $new_object->set_written_stamp( $written_stamp );
       $new_object->set_article_id( $article_id );
       $new_object->set_text( $text );
+      $new_object->set_media_id( $media_id );
       $this->add_item( $new_object );
       $object_number++;
       }
@@ -138,7 +141,8 @@ class generated_team_article_comment_list
       team_article_comment.author_id,
       team_article_comment.written_stamp,
       team_article_comment.article_id,
-      team_article_comment.text
+      team_article_comment.text,
+      team_article_comment.media_id
       ";
     }
 

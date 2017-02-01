@@ -45,8 +45,10 @@ class generated_task_list
       real_duration,
       status,
       task_description,
-      receiver_comment,
       author_comment,
+      author_media_id,
+      receiver_comment,
+      receiver_media_id,
       start_time_table_item_id,
       end_time_table_item_id,
       end_item_date
@@ -110,8 +112,10 @@ class generated_task_list
       $real_duration,
       $status,
       $task_description,
-      $receiver_comment,
       $author_comment,
+      $author_media_id,
+      $receiver_comment,
+      $receiver_media_id,
       $start_time_table_item_id,
       $end_time_table_item_id,
       $end_item_date
@@ -130,8 +134,10 @@ class generated_task_list
       $new_object->set_real_duration( $real_duration );
       $new_object->set_status( $status );
       $new_object->set_task_description( $task_description );
-      $new_object->set_receiver_comment( $receiver_comment );
       $new_object->set_author_comment( $author_comment );
+      $new_object->set_author_media_id( $author_media_id );
+      $new_object->set_receiver_comment( $receiver_comment );
+      $new_object->set_receiver_media_id( $receiver_media_id );
       $new_object->set_start_time_table_item_id( $start_time_table_item_id );
       $new_object->set_end_time_table_item_id( $end_time_table_item_id );
       $new_object->set_end_item_date( $end_item_date );
@@ -162,8 +168,10 @@ class generated_task_list
       task.real_duration,
       task.status,
       task.task_description,
-      task.receiver_comment,
       task.author_comment,
+      task.author_media_id,
+      task.receiver_comment,
+      task.receiver_media_id,
       task.start_time_table_item_id,
       task.end_time_table_item_id,
       task.end_item_date

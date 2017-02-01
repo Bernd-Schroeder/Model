@@ -9,7 +9,7 @@ error_reporting(E_ALL);
  *
  * This file is part of untitledModel.
  *
- * Automatically generated on 18.09.2015, 09:29:57 with ArgoUML PHP module 
+ * Automatically generated on 31.01.2017, 15:05:54 with ArgoUML PHP module 
  * (last revised $Date: 2010-01-12 20:14:42 +0100 (Tue, 12 Jan 2010) $)
  *
  * @author firstname and lastname of author, <author@example.org>
@@ -115,6 +115,22 @@ class generated_task
     private $task_description = null;
 
     /**
+     * Short description of attribute author_comment
+     *
+     * @access private
+     * @var String
+     */
+    private $author_comment = null;
+
+    /**
+     * Short description of attribute author_media_id
+     *
+     * @access public
+     * @var Integer
+     */
+    public $author_media_id = null;
+
+    /**
      * Short description of attribute receiver_comment
      *
      * @access private
@@ -123,12 +139,12 @@ class generated_task
     private $receiver_comment = null;
 
     /**
-     * Short description of attribute author_comment
+     * Short description of attribute receiver_media_id
      *
-     * @access private
-     * @var String
+     * @access public
+     * @var Integer
      */
-    private $author_comment = null;
+    public $receiver_media_id = null;
 
     /**
      * Short description of attribute start_time_table_item_id

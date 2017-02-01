@@ -65,6 +65,14 @@ class generated_member_message
      */
     private $text = null;
 
+    /**
+     * Short description of attribute media_id
+     *
+     * @access public
+     * @var Integer
+     */
+    public $media_id = null;
+
      // --- OPERATIONS ---
 
     /**
@@ -200,6 +208,28 @@ class generated_member_message
     }
 
     /**
+     * Short description of attribute media_id
+     *
+     * @access public
+     * @var Integer
+     */
+    public function set_media_id($media_id)
+    {
+      $this->media_id = $media_id;
+    }
+
+    /**
+     * Short description of attribute media_id
+     *
+     * @access public
+     * @var Integer
+     */
+    public function get_media_id()
+    {
+      return $this->media_id;
+    }
+
+    /**
      *
      * This is the insert function of the class member_message
      * @author Bernd Schröder
@@ -214,6 +244,7 @@ class generated_member_message
       $reader_id = $this->get_reader_id();
       $read_stamp = $this->get_read_stamp();
       $text = $this->get_text();
+      $media_id = $this->get_media_id();
       if( $stmt = $mysqli->prepare(
       "INSERT INTO member_message
       (
@@ -221,18 +252,20 @@ class generated_member_message
       author_id,
       reader_id,
       read_stamp,
-      text
+      text,
+      media_id
       )
-      VALUES (?,?,?,?,?)"))
+      VALUES (?,?,?,?,?,?)"))
       {
       $stmt->bind_param
       (
-      "iiiss",
+      "iiissi",
       $id,
       $author_id,
       $reader_id,
       $read_stamp,
-      $text
+      $text,
+      $media_id
       );
       $stmt->execute();
       $stmt->close();
@@ -264,7 +297,8 @@ class generated_member_message
       written_stamp,
       reader_id,
       read_stamp,
-      text
+      text,
+      media_id
       FROM member_message WHERE id=?"))
       {
       $stmt->bind_param('i', $id );
@@ -276,7 +310,8 @@ class generated_member_message
       $written_stamp,
       $reader_id,
       $read_stamp,
-      $text
+      $text,
+      $media_id
       );
       if( $stmt->fetch() == TRUE )
       {
@@ -286,6 +321,7 @@ class generated_member_message
       $this->set_reader_id( $reader_id );
       $this->set_read_stamp( $read_stamp );
       $this->set_text( $text );
+      $this->set_media_id( $media_id );
       $stmt->close();
       }
       else
@@ -316,6 +352,7 @@ class generated_member_message
       $reader_id = $this->get_reader_id();
       $read_stamp = $this->get_read_stamp();
       $text = $this->get_text();
+      $media_id = $this->get_media_id();
       $id = $this->get_id();
       if( $stmt = $mysqli->prepare(
       "UPDATE member_message SET
@@ -323,17 +360,19 @@ class generated_member_message
       author_id=?,
       reader_id=?,
       read_stamp=?,
-      text=?
+      text=?,
+      media_id=?
       WHERE id=?"))
       {
       $stmt->bind_param
       (
-      "iiissi",
+      "iiissii",
       $id,
       $author_id,
       $reader_id,
       $read_stamp,
       $text,
+      $media_id,
       $id
       );
       $stmt->execute();

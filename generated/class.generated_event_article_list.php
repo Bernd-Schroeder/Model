@@ -45,8 +45,7 @@ class generated_event_article_list
       modified_stamp,
       header,
       text,
-      image_id,
-      ref_link
+      media_id
       FROM event_article " .
       $where_statement;
       return $this->basic_load( $prepare_statement );
@@ -107,8 +106,7 @@ class generated_event_article_list
       $modified_stamp,
       $header,
       $text,
-      $image_id,
-      $ref_link
+      $media_id
       );
       $this->stmt->store_result();
       $this->stmt->data_seek( (int)( $start_row ) );
@@ -124,8 +122,7 @@ class generated_event_article_list
       $new_object->set_modified_stamp( $modified_stamp );
       $new_object->set_header( $header );
       $new_object->set_text( $text );
-      $new_object->set_image_id( $image_id );
-      $new_object->set_ref_link( $ref_link );
+      $new_object->set_media_id( $media_id );
       $this->add_item( $new_object );
       $object_number++;
       }
@@ -153,8 +150,7 @@ class generated_event_article_list
       event_article.modified_stamp,
       event_article.header,
       event_article.text,
-      event_article.image_id,
-      event_article.ref_link
+      event_article.media_id
       ";
     }
 

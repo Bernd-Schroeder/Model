@@ -3,13 +3,13 @@
 error_reporting(E_ALL);
 
 /**
- * untitledModel - generated\class.media_connection.php
+ * untitledModel - generated\class.team_network_id.php
  *
  * $Id$
  *
  * This file is part of untitledModel.
  *
- * Automatically generated on 30.01.2017, 16:24:48 with ArgoUML PHP module 
+ * Automatically generated on 01.02.2017, 11:14:53 with ArgoUML PHP module 
  * (last revised $Date: 2010-01-12 20:14:42 +0100 (Tue, 12 Jan 2010) $)
  *
  * @author firstname and lastname of author, <author@example.org>
@@ -28,21 +28,21 @@ if (0 > version_compare(PHP_VERSION, '5')) {
 require_once('class.general_group.php');
 
 /* user defined includes */
-// section -64--88-1--117-16f04adb:159efc643ee:-8000:00000000000017C1-includes begin
-// section -64--88-1--117-16f04adb:159efc643ee:-8000:00000000000017C1-includes end
+// section -64--88-1--117-16f04adb:159efc643ee:-8000:00000000000017E0-includes begin
+// section -64--88-1--117-16f04adb:159efc643ee:-8000:00000000000017E0-includes end
 
 /* user defined constants */
-// section -64--88-1--117-16f04adb:159efc643ee:-8000:00000000000017C1-constants begin
-// section -64--88-1--117-16f04adb:159efc643ee:-8000:00000000000017C1-constants end
+// section -64--88-1--117-16f04adb:159efc643ee:-8000:00000000000017E0-constants begin
+// section -64--88-1--117-16f04adb:159efc643ee:-8000:00000000000017E0-constants end
 
 /**
- * Short description of class generated_media_connection
+ * Short description of class generated_team_network_id
  *
  * @access public
  * @author firstname and lastname of author, <author@example.org>
  * @package generated
  */
-class generated_media_connection
+class generated_team_network_id
     extends general_group
 {
     // --- ASSOCIATIONS ---
@@ -58,8 +58,16 @@ class generated_media_connection
      */
     public $id = null;
 
+    /**
+     * Short description of attribute top_team_id
+     *
+     * @access public
+     * @var Integer
+     */
+    public $top_team_id = null;
+
     // --- OPERATIONS ---
 
-} /* end of class generated_media_connection */
+} /* end of class generated_team_network_id */
 
 ?>

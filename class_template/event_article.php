@@ -9,7 +9,7 @@ error_reporting(E_ALL);
  *
  * This file is part of untitledModel.
  *
- * Automatically generated on 25.06.2016, 09:45:08 with ArgoUML PHP module 
+ * Automatically generated on 31.01.2017, 14:05:25 with ArgoUML PHP module 
  * (last revised $Date: 2010-01-12 20:14:42 +0100 (Tue, 12 Jan 2010) $)
  *
  * @author firstname and lastname of author, <author@example.org>
@@ -115,20 +115,12 @@ class generated_event_article
     private $text = null;
 
     /**
-     * Short description of attribute image_id
+     * Short description of attribute media_id
      *
      * @access private
      * @var Integer
      */
-    private $image_id = null;
-
-    /**
-     * Short description of attribute ref_link
-     *
-     * @access private
-     * @var String
-     */
-    private $ref_link = null;
+    private $media_id = null;
 
     // --- OPERATIONS ---
 

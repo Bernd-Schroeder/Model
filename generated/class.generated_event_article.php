@@ -82,20 +82,12 @@ class generated_event_article
     private $text = null;
 
     /**
-     * Short description of attribute image_id
+     * Short description of attribute media_id
      *
      * @access private
      * @var Integer
      */
-    private $image_id = null;
-
-    /**
-     * Short description of attribute ref_link
-     *
-     * @access private
-     * @var String
-     */
-    private $ref_link = null;
+    private $media_id = null;
 
      // --- OPERATIONS ---
 
@@ -276,47 +268,25 @@ class generated_event_article
     }
 
     /**
-     * Short description of attribute image_id
+     * Short description of attribute media_id
      *
      * @access private
      * @var Integer
      */
-    public function set_image_id($image_id)
+    public function set_media_id($media_id)
     {
-      $this->image_id = $image_id;
+      $this->media_id = $media_id;
     }
 
     /**
-     * Short description of attribute image_id
+     * Short description of attribute media_id
      *
      * @access private
      * @var Integer
      */
-    public function get_image_id()
+    public function get_media_id()
     {
-      return $this->image_id;
-    }
-
-    /**
-     * Short description of attribute ref_link
-     *
-     * @access private
-     * @var String
-     */
-    public function set_ref_link($ref_link)
-    {
-      $this->ref_link = $ref_link;
-    }
-
-    /**
-     * Short description of attribute ref_link
-     *
-     * @access private
-     * @var String
-     */
-    public function get_ref_link()
-    {
-      return $this->ref_link;
+      return $this->media_id;
     }
 
     /**
@@ -336,8 +306,7 @@ class generated_event_article
       $modified_stamp = $this->get_modified_stamp();
       $header = $this->get_header();
       $text = $this->get_text();
-      $image_id = $this->get_image_id();
-      $ref_link = $this->get_ref_link();
+      $media_id = $this->get_media_id();
       if( $stmt = $mysqli->prepare(
       "INSERT INTO event_article
       (
@@ -348,14 +317,13 @@ class generated_event_article
       modified_stamp,
       header,
       text,
-      image_id,
-      ref_link
+      media_id
       )
-      VALUES (?,?,?,?,?,?,?,?,?)"))
+      VALUES (?,?,?,?,?,?,?,?)"))
       {
       $stmt->bind_param
       (
-      "iiiisssis",
+      "iiiisssi",
       $id,
       $deleted,
       $owner_id,
@@ -363,8 +331,7 @@ class generated_event_article
       $modified_stamp,
       $header,
       $text,
-      $image_id,
-      $ref_link
+      $media_id
       );
       $stmt->execute();
       $stmt->close();
@@ -399,8 +366,7 @@ class generated_event_article
       modified_stamp,
       header,
       text,
-      image_id,
-      ref_link
+      media_id
       FROM event_article WHERE id=?"))
       {
       $stmt->bind_param('i', $id );
@@ -415,8 +381,7 @@ class generated_event_article
       $modified_stamp,
       $header,
       $text,
-      $image_id,
-      $ref_link
+      $media_id
       );
       if( $stmt->fetch() == TRUE )
       {
@@ -428,8 +393,7 @@ class generated_event_article
       $this->set_modified_stamp( $modified_stamp );
       $this->set_header( $header );
       $this->set_text( $text );
-      $this->set_image_id( $image_id );
-      $this->set_ref_link( $ref_link );
+      $this->set_media_id( $media_id );
       $stmt->close();
       }
       else
@@ -462,8 +426,7 @@ class generated_event_article
       $modified_stamp = $this->get_modified_stamp();
       $header = $this->get_header();
       $text = $this->get_text();
-      $image_id = $this->get_image_id();
-      $ref_link = $this->get_ref_link();
+      $media_id = $this->get_media_id();
       $id = $this->get_id();
       if( $stmt = $mysqli->prepare(
       "UPDATE event_article SET
@@ -474,13 +437,12 @@ class generated_event_article
       modified_stamp=?,
       header=?,
       text=?,
-      image_id=?,
-      ref_link=?
+      media_id=?
       WHERE id=?"))
       {
       $stmt->bind_param
       (
-      "iiiisssisi",
+      "iiiisssii",
       $id,
       $deleted,
       $owner_id,
@@ -488,8 +450,7 @@ class generated_event_article
       $modified_stamp,
       $header,
       $text,
-      $image_id,
-      $ref_link,
+      $media_id,
       $id
       );
       $stmt->execute();

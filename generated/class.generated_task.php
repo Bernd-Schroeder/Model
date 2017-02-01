@@ -82,6 +82,22 @@ class generated_task
     private $task_description = null;
 
     /**
+     * Short description of attribute author_comment
+     *
+     * @access private
+     * @var String
+     */
+    private $author_comment = null;
+
+    /**
+     * Short description of attribute author_media_id
+     *
+     * @access public
+     * @var Integer
+     */
+    public $author_media_id = null;
+
+    /**
      * Short description of attribute receiver_comment
      *
      * @access private
@@ -90,12 +106,12 @@ class generated_task
     private $receiver_comment = null;
 
     /**
-     * Short description of attribute author_comment
+     * Short description of attribute receiver_media_id
      *
-     * @access private
-     * @var String
+     * @access public
+     * @var Integer
      */
-    private $author_comment = null;
+    public $receiver_media_id = null;
 
     /**
      * Short description of attribute start_time_table_item_id
@@ -300,6 +316,50 @@ class generated_task
     }
 
     /**
+     * Short description of attribute author_comment
+     *
+     * @access private
+     * @var String
+     */
+    public function set_author_comment($author_comment)
+    {
+      $this->author_comment = $author_comment;
+    }
+
+    /**
+     * Short description of attribute author_comment
+     *
+     * @access private
+     * @var String
+     */
+    public function get_author_comment()
+    {
+      return $this->author_comment;
+    }
+
+    /**
+     * Short description of attribute author_media_id
+     *
+     * @access public
+     * @var Integer
+     */
+    public function set_author_media_id($author_media_id)
+    {
+      $this->author_media_id = $author_media_id;
+    }
+
+    /**
+     * Short description of attribute author_media_id
+     *
+     * @access public
+     * @var Integer
+     */
+    public function get_author_media_id()
+    {
+      return $this->author_media_id;
+    }
+
+    /**
      * Short description of attribute receiver_comment
      *
      * @access private
@@ -322,25 +382,25 @@ class generated_task
     }
 
     /**
-     * Short description of attribute author_comment
+     * Short description of attribute receiver_media_id
      *
-     * @access private
-     * @var String
+     * @access public
+     * @var Integer
      */
-    public function set_author_comment($author_comment)
+    public function set_receiver_media_id($receiver_media_id)
     {
-      $this->author_comment = $author_comment;
+      $this->receiver_media_id = $receiver_media_id;
     }
 
     /**
-     * Short description of attribute author_comment
+     * Short description of attribute receiver_media_id
      *
-     * @access private
-     * @var String
+     * @access public
+     * @var Integer
      */
-    public function get_author_comment()
+    public function get_receiver_media_id()
     {
-      return $this->author_comment;
+      return $this->receiver_media_id;
     }
 
     /**
@@ -427,8 +487,10 @@ class generated_task
       $real_duration = $this->get_real_duration();
       $status = $this->get_status();
       $task_description = $this->get_task_description();
-      $receiver_comment = $this->get_receiver_comment();
       $author_comment = $this->get_author_comment();
+      $author_media_id = $this->get_author_media_id();
+      $receiver_comment = $this->get_receiver_comment();
+      $receiver_media_id = $this->get_receiver_media_id();
       $start_time_table_item_id = $this->get_start_time_table_item_id();
       $end_time_table_item_id = $this->get_end_time_table_item_id();
       $end_item_date = $this->get_end_item_date();
@@ -443,17 +505,19 @@ class generated_task
       real_duration,
       status,
       task_description,
-      receiver_comment,
       author_comment,
+      author_media_id,
+      receiver_comment,
+      receiver_media_id,
       start_time_table_item_id,
       end_time_table_item_id,
       end_item_date
       )
-      VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)"))
+      VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)"))
       {
       $stmt->bind_param
       (
-      "iiiiiiisssiis",
+      "iiiiiiissisiiis",
       $id,
       $author_id,
       $receiver_id,
@@ -462,8 +526,10 @@ class generated_task
       $real_duration,
       $status,
       $task_description,
-      $receiver_comment,
       $author_comment,
+      $author_media_id,
+      $receiver_comment,
+      $receiver_media_id,
       $start_time_table_item_id,
       $end_time_table_item_id,
       $end_item_date
@@ -501,8 +567,10 @@ class generated_task
       real_duration,
       status,
       task_description,
-      receiver_comment,
       author_comment,
+      author_media_id,
+      receiver_comment,
+      receiver_media_id,
       start_time_table_item_id,
       end_time_table_item_id,
       end_item_date
@@ -520,8 +588,10 @@ class generated_task
       $real_duration,
       $status,
       $task_description,
-      $receiver_comment,
       $author_comment,
+      $author_media_id,
+      $receiver_comment,
+      $receiver_media_id,
       $start_time_table_item_id,
       $end_time_table_item_id,
       $end_item_date
@@ -536,8 +606,10 @@ class generated_task
       $this->set_real_duration( $real_duration );
       $this->set_status( $status );
       $this->set_task_description( $task_description );
-      $this->set_receiver_comment( $receiver_comment );
       $this->set_author_comment( $author_comment );
+      $this->set_author_media_id( $author_media_id );
+      $this->set_receiver_comment( $receiver_comment );
+      $this->set_receiver_media_id( $receiver_media_id );
       $this->set_start_time_table_item_id( $start_time_table_item_id );
       $this->set_end_time_table_item_id( $end_time_table_item_id );
       $this->set_end_item_date( $end_item_date );
@@ -574,8 +646,10 @@ class generated_task
       $real_duration = $this->get_real_duration();
       $status = $this->get_status();
       $task_description = $this->get_task_description();
-      $receiver_comment = $this->get_receiver_comment();
       $author_comment = $this->get_author_comment();
+      $author_media_id = $this->get_author_media_id();
+      $receiver_comment = $this->get_receiver_comment();
+      $receiver_media_id = $this->get_receiver_media_id();
       $start_time_table_item_id = $this->get_start_time_table_item_id();
       $end_time_table_item_id = $this->get_end_time_table_item_id();
       $end_item_date = $this->get_end_item_date();
@@ -590,8 +664,10 @@ class generated_task
       real_duration=?,
       status=?,
       task_description=?,
-      receiver_comment=?,
       author_comment=?,
+      author_media_id=?,
+      receiver_comment=?,
+      receiver_media_id=?,
       start_time_table_item_id=?,
       end_time_table_item_id=?,
       end_item_date=?
@@ -599,7 +675,7 @@ class generated_task
       {
       $stmt->bind_param
       (
-      "iiiiiiisssiisi",
+      "iiiiiiissisiiisi",
       $id,
       $author_id,
       $receiver_id,
@@ -608,8 +684,10 @@ class generated_task
       $real_duration,
       $status,
       $task_description,
-      $receiver_comment,
       $author_comment,
+      $author_media_id,
+      $receiver_comment,
+      $receiver_media_id,
       $start_time_table_item_id,
       $end_time_table_item_id,
       $end_item_date,

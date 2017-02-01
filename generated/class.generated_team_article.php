@@ -82,12 +82,12 @@ class generated_team_article
     private $text = null;
 
     /**
-     * Short description of attribute media_connection_id
+     * Short description of attribute media_id
      *
      * @access private
      * @var Integer
      */
-    private $media_connection_id = null;
+    private $media_id = null;
 
      // --- OPERATIONS ---
 
@@ -268,25 +268,25 @@ class generated_team_article
     }
 
     /**
-     * Short description of attribute media_connection_id
+     * Short description of attribute media_id
      *
      * @access private
      * @var Integer
      */
-    public function set_media_connection_id($media_connection_id)
+    public function set_media_id($media_id)
     {
-      $this->media_connection_id = $media_connection_id;
+      $this->media_id = $media_id;
     }
 
     /**
-     * Short description of attribute media_connection_id
+     * Short description of attribute media_id
      *
      * @access private
      * @var Integer
      */
-    public function get_media_connection_id()
+    public function get_media_id()
     {
-      return $this->media_connection_id;
+      return $this->media_id;
     }
 
     /**
@@ -306,7 +306,7 @@ class generated_team_article
       $modified_stamp = $this->get_modified_stamp();
       $header = $this->get_header();
       $text = $this->get_text();
-      $media_connection_id = $this->get_media_connection_id();
+      $media_id = $this->get_media_id();
       if( $stmt = $mysqli->prepare(
       "INSERT INTO team_article
       (
@@ -317,7 +317,7 @@ class generated_team_article
       modified_stamp,
       header,
       text,
-      media_connection_id
+      media_id
       )
       VALUES (?,?,?,?,?,?,?,?)"))
       {
@@ -331,7 +331,7 @@ class generated_team_article
       $modified_stamp,
       $header,
       $text,
-      $media_connection_id
+      $media_id
       );
       $stmt->execute();
       $stmt->close();
@@ -366,7 +366,7 @@ class generated_team_article
       modified_stamp,
       header,
       text,
-      media_connection_id
+      media_id
       FROM team_article WHERE id=?"))
       {
       $stmt->bind_param('i', $id );
@@ -381,7 +381,7 @@ class generated_team_article
       $modified_stamp,
       $header,
       $text,
-      $media_connection_id
+      $media_id
       );
       if( $stmt->fetch() == TRUE )
       {
@@ -393,7 +393,7 @@ class generated_team_article
       $this->set_modified_stamp( $modified_stamp );
       $this->set_header( $header );
       $this->set_text( $text );
-      $this->set_media_connection_id( $media_connection_id );
+      $this->set_media_id( $media_id );
       $stmt->close();
       }
       else
@@ -426,7 +426,7 @@ class generated_team_article
       $modified_stamp = $this->get_modified_stamp();
       $header = $this->get_header();
       $text = $this->get_text();
-      $media_connection_id = $this->get_media_connection_id();
+      $media_id = $this->get_media_id();
       $id = $this->get_id();
       if( $stmt = $mysqli->prepare(
       "UPDATE team_article SET
@@ -437,7 +437,7 @@ class generated_team_article
       modified_stamp=?,
       header=?,
       text=?,
-      media_connection_id=?
+      media_id=?
       WHERE id=?"))
       {
       $stmt->bind_param
@@ -450,7 +450,7 @@ class generated_team_article
       $modified_stamp,
       $header,
       $text,
-      $media_connection_id,
+      $media_id,
       $id
       );
       $stmt->execute();
