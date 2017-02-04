@@ -9,7 +9,7 @@ error_reporting(E_ALL);
  *
  * This file is part of untitledModel.
  *
- * Automatically generated on 14.09.2016, 15:31:23 with ArgoUML PHP module 
+ * Automatically generated on 03.02.2017, 16:12:08 with ArgoUML PHP module 
  * (last revised $Date: 2010-01-12 20:14:42 +0100 (Tue, 12 Jan 2010) $)
  *
  * @author firstname and lastname of author, <author@example.org>
@@ -551,34 +551,6 @@ class basic_member_list
      $task_list = new task_list_user();
      $task_list->set_owner_id( $this->get_id() );
      $count = $task_list->get_archived_author_task_count();
-     return $count;
-    }
-    /**
-     *
-     * @access public
-     * @author firstname and lastname of author, <author@example.org>
-     */
-    public function get_article_list()
-    {
-     require_once('class.member_article_list.php');
-     
-     $article_list = new member_article_list();
-     $article_list->set_owner_id( $this->get_id() );
-     $article_list->load();
-     return $article_list;
-    }
-    /**
-     *
-     * @access public
-     * @author firstname and lastname of author, <author@example.org>
-     */
-    public function get_article_list_count()
-    {
-     require_once('class.member_article_list.php');
-     
-     $article_list = new member_article_list();
-     $article_list->set_owner_id( $this->get_id() );
-     $count = $article_list->get_count();
      return $count;
     }
     /**

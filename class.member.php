@@ -9,7 +9,7 @@ error_reporting(E_ALL);
  *
  * This file is part of untitledModel.
  *
- * Automatically generated on 09.12.2016, 17:04:47 with ArgoUML PHP module 
+ * Automatically generated on 03.02.2017, 16:15:38 with ArgoUML PHP module 
  * (last revised $Date: 2010-01-12 20:14:42 +0100 (Tue, 12 Jan 2010) $)
  *
  * @author firstname and lastname of author, <author@example.org>
@@ -477,21 +477,6 @@ class member
      *
      * @access public
      * @author firstname and lastname of author, <author@example.org>
-     * @param  article_id
-     */
-    public function get_article($article_id)
-    {
-     require_once('class.member_article.php');
-     
-     $article = new member_article();
-     $article->set_id( $article_id );
-     $article->load();
-     return $article;
-    }
-    /**
-     *
-     * @access public
-     * @author firstname and lastname of author, <author@example.org>
      */
     public function add_upteam_access()
     {
@@ -515,7 +500,7 @@ class member
      for ( $i = 0; $i < $task_list->get_item_count(); $i++ )
      {
      $task = $task_list->get_item($i);
-     // $workload += $task->;
+     //$workload += $task->;
      }
     }
     /**

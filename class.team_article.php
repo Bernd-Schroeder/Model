@@ -88,16 +88,16 @@ class team_article
      * @access public
      * @author firstname and lastname of author, <author@example.org>
      */
-    public function get_article_image()
-    {
-     return $this->get_image()->get_article_thumb();
-    }
+//    public function get_article_image()
+//    {
+//     return $this->get_image()->get_article_thumb();
+//    }
     /**
      *
      * @access public
      * @author firstname and lastname of author, <author@example.org>
      */
-    public function get_image()
+/*    public function get_image()
     {
      if( defined('__DB_ROOT__') == FALSE )
      { define('__DB_ROOT__', dirname(__FILE__) ); }
@@ -107,7 +107,7 @@ class team_article
      $new_image->set_id( $this->get_image_id() );
      $new_image->load();
      return $new_image;
-    }
+    } */
     /**
      *
      * @access public
